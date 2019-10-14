@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/* CSS Document */
+
+:root
+{
+	--size:400px;
+	--ib:rgba(0,0,0,0.5);
+}
+body
+{
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	color: white;
+	font-family: tahoma;	
+}
+
+.container
+{
+	width: var(--size);
+	height: var(--size);
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-template-rows: repeat(2, 50%);
+	justify-content: center;
+	align-items: center;
+	margin: 150px 0 0 220px;	
+}
+
+.productimage
+{
+	grid-column: 1/span 2;
+	grid-row: 1 /span 2;
+	width: var(--size);
+	height: var(--size);
+	background-size: cover;
+	clip-path: polygon(
+	20% 20%,
+	50% 20%,
+	50% 20%,
+	80% 20%,
+	80% 50%,
+	80% 50%,
+	80% 80%,
+	50% 80%,
+	50% 80%,
+	20% 80%,
+	20% 50%,
+	20% 50%
+	
+	);
+	transition: all 0.7s cubic-bezier(0.895, 0.03, 0.0785, 0.22);
+}
+
+.shoeimg
+{
+	background-image: url("../images/nike.png");
+}
+
+.shirtimg
+{
+	background-image: url("../images/nike2.jpg");
+}
+
+h4,
+ul,
+span
+{
+	padding: 0;
+	margin: 0;
+}
+
+.size,
+.color
+{
+	grid-column: 1;
+	grid-row: 1;
+	justify-self: center;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.7s cubic-bezier(0.895, 0.03, 0.785, 0.22);
+}
+
+
+.size ul li,
+.color ul li
+{
+	list-style: none;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.color
+{
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.color ul li span
+{
+	width: 10px;
+	height: 10px;
+	border-radius: 50px;
+	display: inline-block;
+}
+
+.red
+{
+	background-color: red;
+}
+
+.yellow
+{
+	background-color: greenyellow;
+}
+
+.blue
+{
+	background-color: #0077ee;
+}
+
+.price
+{
+	grid-column: 2;
+	grid-row: 1;
+	justify-self: center;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.7s cubic-bezier(0.895, 0.03, 0.785, 0.22);
+}
+
+.price h4
+{
+	margin-bottom: 8px;
+}
+
+.price span
+{
+	width: 20px;
+	height: 20px;
+	padding: 5px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.productname
+{
+	grid-column: 1;
+	grid-row: 2;
+	align-self: center;
+	justify-self: center;
+	z-index: 1;
+	transition: all 0.7s cubic-bezier(0.895, 0.03, 0.785, 0.22);
+}
+
+.productimage:hover
+{
+	clip-path:polygon(
+		20% 0%,
+		50% 0%,
+		50% 20%,
+		100% 20%,
+		100% 50%,
+		80% 50%,
+		80% 100%,
+		50% 100%,
+		50% 80%,
+		0% 80%,
+		0% 50%,
+		20% 50%
+	);
+		transform: rotate(-15deg);
+		transition: all 0.7s cubic-bezier(0.895, 0.03, 0.785, 0.22);
+}
+
+.productimage:hover ~ * {
+	opacity: 1;
+	transform: rotate(-15deg);
+	transition: all 0.7s cubic-bezier(0.895, 0.03, 0.785, 0.22);
+	
+}
